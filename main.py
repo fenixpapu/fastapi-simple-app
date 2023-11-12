@@ -15,3 +15,8 @@ def read_root():
         "message": "Hello, World! from v3",
         "pod_name": POD_NAME
     }
+
+
+@app.get("/health")
+def health_check():
+    return "Ok"
