@@ -1,12 +1,13 @@
 import os
+from datetime import datetime
 from fastapi import FastAPI
 
 POD_NAME = os.environ['POD_NAME']
 
+
 # Create an instance of the FastAPI framework
 app = FastAPI()
-
-# Define a route that returns "Hello, World!"
+print("{} - {}".format(POD_NAME, datetime.now().isoformat()))
 
 
 @app.get("/")
