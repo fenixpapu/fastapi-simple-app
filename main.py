@@ -15,7 +15,7 @@ def read_root():
     print("Requested on: {} at: {}".format(
         POD_NAME, datetime.now().isoformat()))
     return {
-        "message": "Hello, World! from v3",
+        "message": "Hello, World! from v6",
         "pod_name": POD_NAME
     }
 
