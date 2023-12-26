@@ -4,7 +4,7 @@
 
 - To install requirements package: `pip3 install -r requirements.txt`
 
-- To start server: `POD_NAME="test" uvicorn main:app --reload`. And access: `http://localhost:8000`
+- To start server: `POD_NAME="test" POSTGRESQL_URI='localhost' uvicorn main:app --reload`. And access: `http://localhost:8000`
 
 ## Docker guide
 
