@@ -24,7 +24,7 @@ docker push fenixpapu/fastapi-simple-app:v7
 
 ```
 # create new tag from exist tag
-docker tag fenixpapu/fastapi-simple-app:v7 fenixpapu/fastapi-simple-app-private:v7
+docker tag fenixpapu/fastapi-simple-app:v7 fenixpapu/private-fastapi-simple-app:v7
 # push to private repo:
 docker push fenixpapu/fastapi-simple-app-private:v7
 ```
