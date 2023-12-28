@@ -1,8 +1,8 @@
 import os
 from datetime import datetime
 from fastapi import FastAPI, HTTPException, Depends
-from sqlalchemy import create_engine, Column, Integer, String, DateTime, ForeignKey
-from sqlalchemy.orm import declarative_base, sessionmaker, Session
+from sqlalchemy import create_engine, text
+from sqlalchemy.orm import sessionmaker, Session
 
 POD_NAME = os.environ['POD_NAME']
 POSTGRESQL_URI = os.environ['POSTGRESQL_URI']
@@ -21,7 +21,7 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 def check_db_connection(db: Session = Depends(lambda: SessionLocal())):
     try:
-        db.execute("SELECT 1")
+        db.execute(text("SELECT 1"))
         return db
     except Exception as e:
         raise HTTPException(
