@@ -11,26 +11,26 @@
 - Build with command:
 
 ```
-docker buildx build --platform linux/amd64 -t fenixpapu/fastapi-simple-app:v7 .
+docker buildx build --platform linux/amd64 -t fenixpapu/fastapi-simple-app:v8 .
 ```
 
 - Push images to cloud:
 
 ```
-docker push fenixpapu/fastapi-simple-app:v7
+docker push fenixpapu/fastapi-simple-app:v8
 ```
 
 - Or push to private repo:
 
 ```
 # create new tag from exist tag
-docker tag fenixpapu/fastapi-simple-app:v7 fenixpapu/private-fastapi-simple-app:v7
+docker tag fenixpapu/fastapi-simple-app:v8 fenixpapu/private-fastapi-simple-app:v8
 # push to private repo:
-docker push fenixpapu/fastapi-simple-app-private:v7
+docker push fenixpapu/private-fastapi-simple-app:v8
 ```
 
 - Run on local:
 
 ```
-docker run -d -p 80:80 fenixpapu/fastapi-simple-app:v7
+docker run -d -p 80:80 fenixpapu/fastapi-simple-app:v8
 ```

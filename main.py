@@ -13,7 +13,7 @@ app = FastAPI()
 # print("{} - {}".format(POD_NAME, datetime.now().isoformat()))
 
 # Database configuration
-DATABASE_URL = "postgresql://postgres:password@{}/kolyde".format(
+DATABASE_URL = "postgresql://postgres:password@{}/postgres".format(
     POSTGRESQL_URI)
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
