@@ -6,6 +6,7 @@ from sqlalchemy.orm import sessionmaker, Session
 
 POD_NAME = os.environ['POD_NAME']
 POSTGRESQL_URI = os.environ['POSTGRESQL_URI']
+POSTGRES_FROM_VAULT = os.environ.get('POSTGRES', "default_value")
 
 
 # Create an instance of the FastAPI framework
@@ -36,9 +37,10 @@ def read_root(db: Session = Depends(check_db_connection)):
         POD_NAME, datetime.now().isoformat()))
 
     return {
-        "message": "Hello, World! from v6",
+        "message": "Hello, World! from v10",
         "pod_name": POD_NAME,
-        "connect_db": "success"
+        "connect_db": "success",
+        "posgres_from_vault": POSTGRES_FROM_VAULT or "default"
     }
 
 
