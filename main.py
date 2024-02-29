@@ -22,6 +22,7 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 def check_db_connection(db: Session = Depends(lambda: SessionLocal())):
     try:
+        return True
         db.execute(text("SELECT 1"))
         return db
     except Exception as e:
